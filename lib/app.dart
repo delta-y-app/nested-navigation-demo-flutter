@@ -9,11 +9,13 @@ class App extends StatefulWidget {
 }
 
 class AppState extends State<App> {
-  var _currentTab = TabItem.red;
+  var _currentTab = TabItem.sprint;
   final _navigatorKeys = {
-    TabItem.red: GlobalKey<NavigatorState>(),
-    TabItem.green: GlobalKey<NavigatorState>(),
-    TabItem.blue: GlobalKey<NavigatorState>(),
+    TabItem.backlog: GlobalKey<NavigatorState>(),
+    TabItem.summits: GlobalKey<NavigatorState>(),
+    TabItem.sprint: GlobalKey<NavigatorState>(),
+    TabItem.whirlwind: GlobalKey<NavigatorState>(),
+    TabItem.reports: GlobalKey<NavigatorState>(),
   };
 
   void _selectTab(TabItem tabItem) {
@@ -33,9 +35,9 @@ class AppState extends State<App> {
             !await _navigatorKeys[_currentTab].currentState.maybePop();
         if (isFirstRouteInCurrentTab) {
           // if not on the 'main' tab
-          if (_currentTab != TabItem.red) {
+          if (_currentTab != TabItem.sprint) {
             // select 'main' tab
-            _selectTab(TabItem.red);
+            _selectTab(TabItem.sprint);
             // back button handled by app
             return false;
           }
@@ -45,9 +47,11 @@ class AppState extends State<App> {
       },
       child: Scaffold(
         body: Stack(children: <Widget>[
-          _buildOffstageNavigator(TabItem.red),
-          _buildOffstageNavigator(TabItem.green),
-          _buildOffstageNavigator(TabItem.blue),
+          _buildOffstageNavigator(TabItem.backlog),
+          _buildOffstageNavigator(TabItem.summits),
+          _buildOffstageNavigator(TabItem.sprint),
+          _buildOffstageNavigator(TabItem.whirlwind),
+          _buildOffstageNavigator(TabItem.reports),
         ]),
         bottomNavigationBar: BottomNavigation(
           currentTab: _currentTab,
