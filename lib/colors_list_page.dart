@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'top_app_bar.dart';
 
 class ColorsListPage extends StatelessWidget {
   ColorsListPage({this.color, this.title, this.onPush});
@@ -9,19 +10,26 @@ class ColorsListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text(
-            title,
-          ),
-          backgroundColor: color,
-        ),
-        body: Container(
-          color: Colors.white,
-          child: _buildList(),
-        ));
+      body: Container(
+        color: Colors.white,
+        //child: Placeholder(),
+        child: _buildList(),
+      ),
+    );
   }
 
-  final List<int> materialIndices = [900, 800, 700, 600, 500, 400, 300, 200, 100, 50];
+  final List<int> materialIndices = [
+    900,
+    800,
+    700,
+    600,
+    500,
+    400,
+    300,
+    200,
+    100,
+    50
+  ];
 
   Widget _buildList() {
     return ListView.builder(

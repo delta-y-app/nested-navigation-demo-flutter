@@ -46,6 +46,19 @@ class AppState extends State<App> {
         return isFirstRouteInCurrentTab;
       },
       child: Scaffold(
+        appBar: AppBar(
+          actions: [
+            Padding(
+              padding: const EdgeInsets.all(0.0),
+              child: Icon(Icons.search),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Icon(Icons.more_horiz),
+            )
+          ],
+        ),
+        drawer: Drawer(),
         body: Stack(children: <Widget>[
           _buildOffstageNavigator(TabItem.backlog),
           _buildOffstageNavigator(TabItem.summits),
