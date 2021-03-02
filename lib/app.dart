@@ -3,12 +3,12 @@ import 'package:nested_navigation_demo_flutter/bottom_navigation.dart';
 import 'package:nested_navigation_demo_flutter/tab_item.dart';
 import 'package:nested_navigation_demo_flutter/tab_navigator.dart';
 
-class App extends StatefulWidget {
+class AppFrame extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => AppState();
+  State<StatefulWidget> createState() => AppFrameState();
 }
 
-class AppState extends State<App> {
+class AppFrameState extends State<AppFrame> {
   var _currentTab = TabItem.sprint;
   final _navigatorKeys = {
     TabItem.backlog: GlobalKey<NavigatorState>(),
