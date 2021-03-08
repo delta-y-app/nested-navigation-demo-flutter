@@ -9,8 +9,23 @@ class ColorDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        color: color[materialIndex],
+      body: Column(
+        children: [
+          SizedBox(
+            height: 50,
+            child: Row(
+              children: [
+                Flexible(child: Container(child: Placeholder())),
+                Flexible(child: CloseButton())
+              ],
+            ),
+          ),
+          Flexible(
+            child: Container(
+              color: color[materialIndex],
+            ),
+          ),
+        ],
       ),
     );
   }

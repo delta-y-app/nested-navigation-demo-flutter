@@ -11,13 +11,14 @@ class BottomNavigation extends StatefulWidget {
 }
 
 class _BottomNavigationState extends State<BottomNavigation> {
-  int _currentIndex = 0;
+  int _currentIndex = 2;
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
       type: BottomNavigationBarType.fixed,
       showUnselectedLabels: false,
       currentIndex: _currentIndex,
+      selectedItemColor: Colors.black,
       items: [
         _buildItem(TabItem.backlog),
         _buildItem(TabItem.summits),
@@ -41,13 +42,9 @@ class _BottomNavigationState extends State<BottomNavigation> {
     return BottomNavigationBarItem(
       icon: Icon(
         Icons.layers,
-        color: _colorTabMatching(tabItem),
+        color: widget.currentTab == tabItem ? Colors.black : Colors.grey,
       ),
       label: tabName[tabItem],
     );
-  }
-
-  Color _colorTabMatching(TabItem item) {
-    return widget.currentTab == item ? activeTabColor[item] : Colors.grey;
   }
 }

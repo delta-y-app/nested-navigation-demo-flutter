@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'top_app_bar.dart';
+import 'package:nested_navigation_demo_flutter/tab_item.dart';
 
 class ColorsListPage extends StatelessWidget {
   ColorsListPage({this.color, this.title, this.onPush});
@@ -12,7 +12,6 @@ class ColorsListPage extends StatelessWidget {
     return Scaffold(
       body: Container(
         color: Colors.white,
-        //child: Placeholder(),
         child: _buildList(),
       ),
     );
@@ -47,3 +46,11 @@ class ColorsListPage extends StatelessWidget {
         });
   }
 }
+
+const Map<TabItem, MaterialColor> activeTabColor = {
+  TabItem.backlog: Colors.red,
+  TabItem.summits: Colors.green,
+  TabItem.sprint: Colors.blue,
+  TabItem.whirlwind: Colors.orange,
+  TabItem.reports: Colors.purple,
+};
