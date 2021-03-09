@@ -16,10 +16,11 @@ class _BottomNavigationState extends State<BottomNavigation> {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
+      backgroundColor: Theme.of(context).primaryColor,
       type: BottomNavigationBarType.fixed,
       showUnselectedLabels: false,
       currentIndex: _currentIndex,
-      selectedItemColor: Colors.black,
+      selectedItemColor: Colors.white,
       items: [
         _buildItem(TabItem.backlog),
         _buildItem(TabItem.whirlwind),
@@ -35,10 +36,6 @@ class _BottomNavigationState extends State<BottomNavigation> {
         setState(() {
           _currentIndex = index;
         });
-
-// TODO: make this not hardcoded
-// BKMRK
-        Navigator.pushNamed(context, "backlog");
       },
     );
   }
@@ -46,8 +43,10 @@ class _BottomNavigationState extends State<BottomNavigation> {
   BottomNavigationBarItem _buildItem(TabItem tabItem) {
     return BottomNavigationBarItem(
       icon: Icon(
-        Icons.layers,
-        color: widget.currentTab == tabItem ? Colors.black : Colors.grey,
+        tabIconData[tabItem],
+        color: widget.currentTab == tabItem
+            ? Colors.white
+            : Color.fromRGBO(220, 220, 220, 100),
       ),
       label: tabName[tabItem],
     );
