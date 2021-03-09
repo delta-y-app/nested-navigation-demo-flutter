@@ -12,14 +12,13 @@ import 'package:nested_navigation_demo_flutter/module_pages/whirlwind_page.dart'
 import 'package:nested_navigation_demo_flutter/tab_item.dart';
 
 class TabNavigatorRoutes {
-  // TODO: add / prefix to all paths (removing it made it stop throwing exceptions)
-  //static const String login = '/';
+  static const String login = '/';
 
-  static const String backlog = 'backlog';
-  static const String whirlwind = 'whirlwind';
-  static const String sprint = 'sprint';
-  static const String summits = 'summits';
-  static const String reports = 'reports';
+  static const String backlog = '/backlog';
+  static const String whirlwind = '/whirlwind';
+  static const String sprint = '/sprint';
+  static const String summits = '/summits';
+  static const String reports = '/reports';
 
   static const String backlogDetail = '/backlog/detail';
   static const String whirlwindDetail = '/whirlwind/detail';
