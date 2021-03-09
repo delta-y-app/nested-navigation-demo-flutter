@@ -21,9 +21,9 @@ class _BottomNavigationState extends State<BottomNavigation> {
       selectedItemColor: Colors.black,
       items: [
         _buildItem(TabItem.backlog),
-        _buildItem(TabItem.summits),
-        _buildItem(TabItem.sprint),
         _buildItem(TabItem.whirlwind),
+        _buildItem(TabItem.sprint),
+        _buildItem(TabItem.summits),
         _buildItem(TabItem.reports),
       ],
       onTap: (index) {

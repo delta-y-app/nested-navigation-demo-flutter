@@ -12,9 +12,9 @@ class AppFrameState extends State<AppFrame> {
   var _currentTab = TabItem.sprint;
   final _navigatorKeys = {
     TabItem.backlog: GlobalKey<NavigatorState>(),
-    TabItem.summits: GlobalKey<NavigatorState>(),
-    TabItem.sprint: GlobalKey<NavigatorState>(),
     TabItem.whirlwind: GlobalKey<NavigatorState>(),
+    TabItem.sprint: GlobalKey<NavigatorState>(),
+    TabItem.summits: GlobalKey<NavigatorState>(),
     TabItem.reports: GlobalKey<NavigatorState>(),
   };
 
@@ -61,9 +61,9 @@ class AppFrameState extends State<AppFrame> {
         drawer: Drawer(),
         body: Stack(children: <Widget>[
           _buildOffstageNavigator(TabItem.backlog),
-          _buildOffstageNavigator(TabItem.summits),
-          _buildOffstageNavigator(TabItem.sprint),
           _buildOffstageNavigator(TabItem.whirlwind),
+          _buildOffstageNavigator(TabItem.sprint),
+          _buildOffstageNavigator(TabItem.summits),
           _buildOffstageNavigator(TabItem.reports),
         ]),
         bottomNavigationBar: BottomNavigation(
