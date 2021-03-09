@@ -34,22 +34,16 @@ class TabNavigator extends StatelessWidget {
   final TabItem tabItem;
   final String _initialRoute = TabNavigatorRoutes.sprint;
 
-// TODO: remove materialIndex arg
   void _push(BuildContext context, String routeName, {int materialIndex: 500}) {
     var routeBuilders = _routeBuilders(context, materialIndex: materialIndex);
 
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => routeBuilders[TabItemTo.tabDetailRoutes[tabItem]](
-            context), // TODO: change detail page depending on which page was navigated from
-// BKMRK
+        builder: (context) =>
+            routeBuilders[TabItemTo.tabDetailRoutes[tabItem]](context),
       ),
     );
-
-    // TODO: delme?
-    //print("pushNamed called!=============================");
-    //Navigator.pushNamed(context, routeName);
   }
 
   Map<String, WidgetBuilder> _routeBuilders(BuildContext context,
@@ -122,14 +116,10 @@ class TabNavigator extends StatelessWidget {
     final routeBuilders = _routeBuilders(context);
     return Navigator(
       key: navigatorKey,
-      initialRoute:
-          _initialRoute, // FIXME: whichever route is the initialRoute is built first (instead of building each individual page)
+      initialRoute: _initialRoute,
       onGenerateRoute: (routeSettings) {
-        print("routeSettings.name == " +
-            routeSettings
-                .name); // FIXME: this isn't getting called every time I go to a new tab, which indicates that build isn't being called
+        print("routeSettings.name == " + routeSettings.name);
         return MaterialPageRoute(
-          //builder: (context) => routeBuilders[routeSettings.name](context),
           builder: (context) =>
               routeBuilders[TabItemTo.tabRoutes[tabItem]](context),
         );
