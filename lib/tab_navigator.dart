@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:nested_navigation_demo_flutter/color_detail_page.dart';
-import 'package:nested_navigation_demo_flutter/colors_list_page.dart';
+import 'package:nested_navigation_demo_flutter/detail_pages/backlog_detail_page.dart';
+import 'package:nested_navigation_demo_flutter/detail_pages/whirlwind_detail_page.dart';
+import 'package:nested_navigation_demo_flutter/detail_pages/sprint_detail_page.dart';
+import 'package:nested_navigation_demo_flutter/detail_pages/summits_detail_page.dart';
+import 'package:nested_navigation_demo_flutter/detail_pages/reports_detail_page.dart';
+import 'package:nested_navigation_demo_flutter/module_pages/backlog_page.dart';
+import 'package:nested_navigation_demo_flutter/module_pages/reports_page.dart';
+import 'package:nested_navigation_demo_flutter/module_pages/sprint_page.dart';
+import 'package:nested_navigation_demo_flutter/module_pages/summits_page.dart';
+import 'package:nested_navigation_demo_flutter/module_pages/whirlwind_page.dart';
 import 'package:nested_navigation_demo_flutter/tab_item.dart';
 
 class TabNavigatorRoutes {
@@ -33,7 +41,7 @@ class TabNavigator extends StatelessWidget {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => routeBuilders[tabDetailRoutes[tabItem]](
+        builder: (context) => routeBuilders[TabItemTo.tabDetailRoutes[tabItem]](
             context), // TODO: change detail page depending on which page was navigated from
 // BKMRK
       ),
@@ -48,62 +56,62 @@ class TabNavigator extends StatelessWidget {
       {int materialIndex: 500}) {
     return {
       TabNavigatorRoutes.backlog: (context) => BacklogPage(
-            color: activeTabColor[tabItem],
-            title: tabName[tabItem],
+            color: TabItemTo.activeTabColor[tabItem],
+            title: TabItemTo.tabName[tabItem],
             onPush: (materialIndex) => _push(
                 context, TabNavigatorRoutes.backlog,
                 materialIndex: materialIndex),
           ),
       TabNavigatorRoutes.whirlwind: (context) => WhirlwindPage(
-            color: activeTabColor[tabItem],
-            title: tabName[tabItem],
+            color: TabItemTo.activeTabColor[tabItem],
+            title: TabItemTo.tabName[tabItem],
             onPush: (materialIndex) => _push(
                 context, TabNavigatorRoutes.whirlwind,
                 materialIndex: materialIndex),
           ),
       TabNavigatorRoutes.sprint: (context) => SprintPage(
-            color: activeTabColor[tabItem],
-            title: tabName[tabItem],
+            color: TabItemTo.activeTabColor[tabItem],
+            title: TabItemTo.tabName[tabItem],
             onPush: (materialIndex) => _push(context, TabNavigatorRoutes.sprint,
                 materialIndex: materialIndex),
           ),
       TabNavigatorRoutes.summits: (context) => SummitsPage(
-            color: activeTabColor[tabItem],
-            title: tabName[tabItem],
+            color: TabItemTo.activeTabColor[tabItem],
+            title: TabItemTo.tabName[tabItem],
             onPush: (materialIndex) => _push(
                 context, TabNavigatorRoutes.summits,
                 materialIndex: materialIndex),
           ),
       TabNavigatorRoutes.reports: (context) => ReportsPage(
-            color: activeTabColor[tabItem],
-            title: tabName[tabItem],
+            color: TabItemTo.activeTabColor[tabItem],
+            title: TabItemTo.tabName[tabItem],
             onPush: (materialIndex) => _push(
                 context, TabNavigatorRoutes.reports,
                 materialIndex: materialIndex),
           ),
       TabNavigatorRoutes.backlogDetail: (context) => BacklogDetailPage(
-            color: activeTabColor[tabItem],
-            title: tabName[tabItem],
+            color: TabItemTo.activeTabColor[tabItem],
+            title: TabItemTo.tabName[tabItem],
             materialIndex: materialIndex,
           ),
       TabNavigatorRoutes.whirlwindDetail: (context) => WhirlwindDetailPage(
-            color: activeTabColor[tabItem],
-            title: tabName[tabItem],
+            color: TabItemTo.activeTabColor[tabItem],
+            title: TabItemTo.tabName[tabItem],
             materialIndex: materialIndex,
           ),
       TabNavigatorRoutes.sprintDetail: (context) => SprintDetailPage(
-            color: activeTabColor[tabItem],
-            title: tabName[tabItem],
+            color: TabItemTo.activeTabColor[tabItem],
+            title: TabItemTo.tabName[tabItem],
             materialIndex: materialIndex,
           ),
       TabNavigatorRoutes.summitsDetail: (context) => SummitsDetailPage(
-            color: activeTabColor[tabItem],
-            title: tabName[tabItem],
+            color: TabItemTo.activeTabColor[tabItem],
+            title: TabItemTo.tabName[tabItem],
             materialIndex: materialIndex,
           ),
       TabNavigatorRoutes.reportsDetail: (context) => ReportsDetailPage(
-            color: activeTabColor[tabItem],
-            title: tabName[tabItem],
+            color: TabItemTo.activeTabColor[tabItem],
+            title: TabItemTo.tabName[tabItem],
             materialIndex: materialIndex,
           ),
     };
@@ -122,7 +130,8 @@ class TabNavigator extends StatelessWidget {
                 .name); // FIXME: this isn't getting called every time I go to a new tab, which indicates that build isn't being called
         return MaterialPageRoute(
           //builder: (context) => routeBuilders[routeSettings.name](context),
-          builder: (context) => routeBuilders[tabRoutes[tabItem]](context),
+          builder: (context) =>
+              routeBuilders[TabItemTo.tabRoutes[tabItem]](context),
         );
       },
     );
