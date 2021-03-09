@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nested_navigation_demo_flutter/tab_item.dart';
+import 'package:nested_navigation_demo_flutter/tab_navigator.dart';
 
 class BottomNavigation extends StatefulWidget {
   BottomNavigation({@required this.currentTab, @required this.onSelectTab});
@@ -34,6 +35,10 @@ class _BottomNavigationState extends State<BottomNavigation> {
         setState(() {
           _currentIndex = index;
         });
+
+// TODO: make this not hardcoded
+// BKMRK
+        Navigator.pushNamed(context, "backlog");
       },
     );
   }
