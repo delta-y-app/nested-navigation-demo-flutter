@@ -24,8 +24,7 @@ class TabNavigator extends StatelessWidget {
   TabNavigator({this.navigatorKey, this.tabItem});
   final GlobalKey<NavigatorState> navigatorKey;
   final TabItem tabItem;
-  final String _initialRoute = TabNavigatorRoutes
-      .sprint; // TODO: change this depending on what is selected
+  final String _initialRoute = TabNavigatorRoutes.sprint;
 
 // TODO: remove materialIndex arg
   void _push(BuildContext context, String routeName, {int materialIndex: 500}) {
