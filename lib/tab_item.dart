@@ -21,6 +21,14 @@ const Map<TabItem, String> tabRoutes = {
   TabItem.reports: TabNavigatorRoutes.reports,
 };
 
+const Map<TabItem, String> tabDetailRoutes = {
+  TabItem.backlog: TabNavigatorRoutes.backlogDetail,
+  TabItem.whirlwind: TabNavigatorRoutes.whirlwindDetail,
+  TabItem.sprint: TabNavigatorRoutes.sprintDetail,
+  TabItem.summits: TabNavigatorRoutes.summitsDetail,
+  TabItem.reports: TabNavigatorRoutes.reportsDetail,
+};
+
 const Map<TabItem, IconData> tabIconData = {
   TabItem.backlog: Icons.arrow_back,
   TabItem.whirlwind: Icons.wifi,

@@ -33,8 +33,9 @@ class TabNavigator extends StatelessWidget {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => routeBuilders[TabNavigatorRoutes.summitsDetail](
+        builder: (context) => routeBuilders[tabDetailRoutes[tabItem]](
             context), // TODO: change detail page depending on which page was navigated from
+// BKMRK
       ),
     );
 
